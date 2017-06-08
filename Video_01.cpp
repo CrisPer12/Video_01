@@ -1,106 +1,110 @@
 #include<stdio.h>
-#include<string.h>
 #include<stdlib.h>
-
+#include<string.h>
+#include<math.h>
 // TURMA SEXTA FEIRA UNINOVE SANTO AMARO - NOITE
 // Naltair Maria dos Santos Silva RA 2215104206
 // Diego Silva de Freitas         RA 2215200622
 // Cristiano Pereira de Ramos     RA 416202354
 
-void atividade();
-void comece();
-void evernote();
-void senso();
-void recompensa();
-
-int f,s;
-char a[200],b[200],c[200],d[200],e[200];
-int main(){
-	printf("7 HABITOS\n\n");
+void FEYNMAN();
+void equacao();
+void soma();
+ int a;
+ char b[20];
+int main() 
+{	printf("TECNICA DE FEYNMAN\n\n");
+    printf("Digite seu nome:\n");
+    gets(b);
+    printf("Digite sua idade:\n");
+    scanf("%d",&a);
 	
-	atividade();
-	comece();
-	evernote();
-	senso();
-	recompensa();
+    FEYNMAN();
+    return 0;
 }
 
-void atividade(){
-	
-	printf("1.PRINCIPIOR 80/20\n\n");
-	printf("Pense sobre 5 atividades importantes do seu dia!\n");
-	printf("Agora informe as atividades(nao precisa ser sequencial)\n\n");
-	printf ("Digite a primeira atividade:\n");
-	gets(a);
-	printf ("Digite a segunda atividade:\n");
-	gets(b);
-	printf ("Digite a terceira atividade:\n");
-	gets(c);	
-	printf ("Digite a quarta atividade:\n");
-	gets(d);	
-	printf ("Digite a quinta atividade:\n");
-	gets(e);		
-	
-	system("pause");
-	system("cls");
-}
-
-
-void comece(){
-printf("2.Comece com mais importante\n\n");	
-printf("Agora que definido as atividades\n");
-printf("Comece seu dia com 3 tarefas mais importantes e de maior impacto\n\n");	
-printf("%s\n%s\n%s\n%s\n%s\n\n",a,b,c,d,e);
-	system("pause");
-	system("cls");
-
-}
-
-void evernote(){
-printf("3.Anote ideias e faca revisao semanal\n\n");
-
-printf("Programa recomendado: EVERNOTE\n");
-printf("Ou se preferir use um bloco de notas ou celular\n");
-printf("Revise semanalmente e encaixe boas ideias em uma agenda\n");
-	system("pause");
-	system("cls");
-}
-
-
-
-void senso(){
-	
-	printf("4.Senso de urgencia\n\n");
-		printf("%s\n%s\n%s\n%s\n%s\n\n",a,b,c,d,e);
-	printf("Diga um prazo de alguma das atividades mencionadas acima (em dias):\n\n");
-	scanf("%d", &f);
-	s = f-1;
-	printf("Realize essa atividade em %d\n",s);
-	system("pause");
-	system("cls");	
-}
-
-void recompensa(){
-	printf("5.Adicione Recompensas e Consequencias\n\n");
-	
-	printf("Escolha uma recompensa e uma consequencia\n");
-	printf("Voce concluiu a tarefa em %d dias?\n1-SIM - 2-NAO\n",s);
-	int t;
-	scanf("%d",&t);
-	switch(t){
-		case 1:{
-			printf("Otimo!!!\nAproveite sua recompensa\n\n");
+void FEYNMAN()
+{	
+    int opc = 0;
+    
+        system("cls");
+        printf("Ola, %s\nEscolha um tema: \n",b);
+        printf("1 - Adicao/Subtracao\n");
+        printf("2 - Equacao\n");
+        printf("3 - Calculadora EQUACAO\n");
+        printf("4 - Calculadora Adicao\n");
+		scanf("%d", &opc);
+        system("cls");
+        switch (opc)
+        {
+            case 1:
+                printf("Sugestoes de sites: \n\n");
+            printf("Wikipedia\nSoMatematica\nInfoEnem\n\n");
+            int g;
+				printf("Deseja usar calculadora Adicao/Subtracao 1-Sim ou 2-Nao\n");
+				scanf("%d",&g);
+				if (g == 1){
+				soma();
+						   }
+			else printf("Obrigado");
+            break;
+                
+            case 2:
+				printf("Sugestoes de sites: \n\n"); 
+                printf("Wikipedia\nAprenderMatematica\nMundoEducacao\n\n");
+				int h;
+				printf("Deseja usar calculadora: 1-Sim ou 2-Nao\n");
+				scanf("%d",&h);
+				if (h == 1){
+				equacao();
+						   }
+			else printf("Obrigado");
 			break;
-		}
-		case 2:{
-			printf("Voce pagara um almoco para 3 pessoas do seu trabalho\n");
-			break;
-		}
-	}
-	printf("6.Comece aos popucos\n");
-	printf("Defina um tempo para atividade escolhida\n");
-	printf("Comece aos poucos e aumente gradativamente\n\n");
+                  
+			case 3:				
+			equacao();
+			break;	  
+			
+			case 4:
+			soma();		
+			break;	
+				  }
+}
+
+
+void equacao()
+{
+double a,b,c,raiz,e,e1;
+printf("Digite variavel A: ");
+scanf("%lf",&a);
+printf("Digite variavel B: ");
+scanf("%lf",&b);
+printf("Digite variavel C: ");
+scanf("%lf",&c);
+raiz = b*b - 4*a*c;
+e = (-b + sqrt(raiz))/(2*a);
+e1 = (-b - sqrt(raiz))/(2*a);
+if(a==0 || raiz < 0)
+    {
+       printf("Impossivel calcular\n");
+    }
+    else{
+	 printf("R1 = %.5lf\n",e);
+	 printf("R2 = %.5lf\n",e1);
+}
+}
+
+
+void soma() {
+ 
+int A,B,soma,subtracao;
 	
-	printf("7.Monitore seu progresso\n\n");
-	printf("Anote cada atividade concluida e toda Final de semana monitore");
+	printf("Digite o primeiro numero\n");
+	scanf("%d",&A);
+	printf("Digite o segundo numero\n");
+	scanf("%d",&B);
+	soma = A + B;
+	subtracao = A - B;
+	printf("SOMA = %d\n",soma);
+	printf("SUBTRACAO = %d\n",subtracao);
 }
